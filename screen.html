@@ -36,6 +36,8 @@
         </p>
       </div>
       <div class="calculatorWrapper">
+
+        <!-- step1 -->
         <div id="step-1">
           <p>Step 1 : Select your shape</p>
           <p>
@@ -50,54 +52,60 @@
           <label for="square-r">Square</label><br />
           <input type="radio" id="ellipse_id" name="area" value="ellipse" />
           <label for="ellipse-r">Ellipse</label><br /><br />
-          <button onclick="" id="step-btn_id">Go to step 2</button> or
-          <button disable class="plain-btn">Cancel</button>
+          <button onclick="setRadioValue() " id="step-btn_id">Go to step 2</button> or
+          <button disabled class="plain-btn">Cancel</button>
         </div>
-      </div>
-      <div class="viewWrapper">
-        <p>120 x 240 Add</p>
-        <p>(Vertical Banner)</p>
-      </div>
+    
+     <!-- step 2 -->
       <div id="step-2" style="display: none;">
         <p>Step 2 : Insert your values</p>
         <p>You have selected a <b id="selected-area"></b>, please input the required variables</p>
         <div id="rectangle-form" style="display: none;">
-          <div>
-            <input class="form-input" placeholder="Length" id="rect-value-1" />
+          <div class="marginTop">
+           Length: <input class="form-input" type="number" placeholder="Length" id="rect-value-1" />
           </div>
-          <div>
-            <input class="form-input" placeholder="Width" id="rect-value-2" />
+          <div class="marginTop">
+            Width: <input class="form-input" type="number" placeholder="Width" id="rect-value-2" />
           </div>
         </div>
         <div id="circle-form" style="display: none;">
-          <div>
-            <input class="form-input" placeholder="Diameter" id="circlr-value" />
+          <div class="marginTop">
+           Diameter: <input class="form-input" type="number" placeholder="Diameter" id="circle-value" />
           </div>
         </div>
         <div id="square-form" style="display: none;">
-          <div>
-            <input class="form-input" placeholder="Side" id="square-value" />
+          <div class="marginTop">
+           Side: <input class="form-input" type="number" placeholder="Side" id="square-value" />
           </div>
         </div>
         <div id="ellipse-form" style="display: none;">
-          <div>
-            <input class="form-input" placeholder="X axis" id="ellipse-value-1" />
+          <div class="marginTop">
+           A-axis: <input class="form-input" type="number" placeholder="A axis" id="ellipse-value-1" />
           </div>
-          <div>
-            <input class="form-input" placeholder="Y axis" id="ellipse-value-2" />
+          <div class="marginTop">
+           B-axis <input class="form-input" type="number" placeholder="B axis" id="ellipse-value-2" />
           </div>
         </div>
-        <button onclick="" id="step-btn">Go to step 3</button> or <button
-          class="plain-btn" onclick="">Cancel</button>
+        <div class="marginTop"></div>
+        <button onclick="onApplyValue()" id="step-btn">Go to step 3</button> or <button
+       onclick="onClear()">Cancel</button>
       </div>
+
+      <!-- step 3 -->
       <div id="step-3" style="display: none;">
         <p>Step 3 : Your Result</p>
+        <!-- You have calculated the area of a -->
         <p id="result-para"></p>
         <h2 id="result-heading"></h2>
-        <button onclick="">Start over</button>
+        <button onclick="onClear()">Start over</button>
       </div>
     </div>
+    <div class="viewWrapper">
+      <p>120 x 240 Add</p>
+      <p>(Vertical Banner)</p>
     </div>
+    </div>
+  </div>
     <script src="main.js"></script>
   </body>
 </html>

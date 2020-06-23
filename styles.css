@@ -15,18 +15,18 @@
   margin: auto;
 }
 .textWrapper {
-  width: 650px;
+  width: 40%;
   height: auto;
 }
 .calculatorWrapper {
-  width: 300px;
+  width: 30%;
   border: 1px solid grey;
   height: auto;
   padding: 24px;
 }
 
 .viewWrapper {
-  width: 100px;
+  width: 10%;
   height: 300px;
   background-color: lightgrey;
   border: 1px solid grey;
@@ -35,4 +35,7 @@
   flex-direction: column;
   display: flex;
   font-size: 12px;
+}
+.marginTop {
+  margin-top: 20px;
 }
