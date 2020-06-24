@@ -77,6 +77,7 @@ function onApplyValue() {
             document.getElementById("step-3").style.display = "block";
             document.getElementById("result-para").innerHTML = `You have calculated the area of a <b>rectangle</b> with height of ${height} and width of ${width}. Below is your result`;
             document.getElementById("result-heading").innerHTML = `The area is ${value}`;
+            break;
 
         }
         case "circle": {
@@ -87,6 +88,7 @@ function onApplyValue() {
             document.getElementById("step-3").style.display = "block";
             document.getElementById("result-para").innerHTML = `You have calculated the area of a <b>circle</b> with diameter of ${diameter}. Below is your result`;
             document.getElementById("result-heading").innerHTML = `The area is ${this.areaResult}`;
+            break;
         }
         case "square": {
             let side = document.getElementById('square-value').value;
@@ -96,6 +98,7 @@ function onApplyValue() {
             document.getElementById("step-3").style.display = "block";
             document.getElementById("result-para").innerHTML = `You have calculated the area of a <b>square</b> with side of ${side}. Below is your result`;
             document.getElementById("result-heading").innerHTML = `The area is ${this.areaResult}`;
+            break;
         }
         case "ellipse": {
             let aAxis = document.getElementById('ellipse-value-1').value;
@@ -106,6 +109,7 @@ function onApplyValue() {
             document.getElementById("step-3").style.display = "block";
             document.getElementById("result-para").innerHTML = `You have calculated the area of a <b>ellipse</b> with A-axis of ${aAxis} and B-axis of ${bAxis}. Below is your result`;
             document.getElementById("result-heading").innerHTML = `The area is ${this.areaResult}`;
+            break;
         }
     }
 }
@@ -113,10 +117,15 @@ function onApplyValue() {
 function onClear() {
     let selectedShape = document.getElementsByName('area');
     console.log("selectedShape", selectedShape)
-    for (var i = 0; i < selectedShape.length; i++)
+    for (var i = 0; i < selectedShape.length; i++) {
+        document.getElementById(`${selectedShape[i].value}-form`).style.display = "none";
         selectedShape[i].checked = false;
+    }
+
 
     document.getElementById("step-1").style.display = "block";
     document.getElementById("step-2").style.display = "none";
     document.getElementById("step-3").style.display = "none";
+    document.getElementById('rect-value-1').value = '';
+    document.getElementById('rect-value-2').value = ''
 }
