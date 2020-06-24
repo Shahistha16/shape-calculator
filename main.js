@@ -4,7 +4,6 @@ function setRadioValue() {
     let selectedShape = document.getElementsByName('area');
     for (i = 0; i < selectedShape.length; i++) {
         if (selectedShape[i].checked) {
-            console.log(selectedShape[i].value)
             document.getElementById("step-1").style.display = "none";
             document.getElementById("step-2").style.display = "block";
             document.getElementById(`${selectedShape[i].value}-form`).style.display = "block";
@@ -72,7 +71,6 @@ function onApplyValue() {
             let Area = new Rectangle(height, width)
             this.areaResult = Area.area();
             const value = Area.area();
-            console.log("this.areaResult", value)
             document.getElementById("step-2").style.display = "none";
             document.getElementById("step-3").style.display = "block";
             document.getElementById("result-para").innerHTML = `You have calculated the area of a <b>rectangle</b> with height of ${height} and width of ${width}. Below is your result`;
@@ -116,16 +114,11 @@ function onApplyValue() {
 
 function onClear() {
     let selectedShape = document.getElementsByName('area');
-    console.log("selectedShape", selectedShape)
     for (var i = 0; i < selectedShape.length; i++) {
         document.getElementById(`${selectedShape[i].value}-form`).style.display = "none";
         selectedShape[i].checked = false;
     }
-
-
     document.getElementById("step-1").style.display = "block";
     document.getElementById("step-2").style.display = "none";
     document.getElementById("step-3").style.display = "none";
-    document.getElementById('rect-value-1').value = '';
-    document.getElementById('rect-value-2').value = ''
 }
